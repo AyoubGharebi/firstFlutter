@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:potato/example.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MyAppp());
 }
 
 class MyApp extends StatelessWidget {
@@ -13,7 +14,6 @@ class MyApp extends StatelessWidget {
     {"name": "samy", "age": 12, "lastname": "ghareeby"},
     {"name": "fayz", "age": 12, "lastname": "ghareeby"}
   ];
-  //ghvhgbbhgbhhbhbbhbhhbhb
 
   @override
   Widget build(BuildContext context) {
@@ -24,20 +24,195 @@ class MyApp extends StatelessWidget {
             title: Text("Title"),
           ),
           body: Container(
-              height: 400,
-              child: GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 4),
-                  itemCount: 100,
-                  itemBuilder: (context, i) => Container(
-                        color: i.isEven ? Colors.red : Colors.blue,
-                        height: 100,
-                        child: Text(
-                            style: TextStyle(fontSize: 40.5),
-                            textAlign: TextAlign.center,
-                            "$i"),
-                      )))),
+            child: card(context),
+          )),
     );
+  }
+
+  ListView card(BuildContext context) {
+    return ListView(
+      children: [
+        Card(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          child: ListTile(
+            isThreeLine: true,
+            leading: Text("1"),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => MyAppp(),
+              ));
+            },
+            title: Text(
+              "ayoub",
+            ),
+            subtitle: Text("age:14"),
+            trailing: Text("2022"),
+          ),
+        ),
+        Card(
+          child: ListTile(
+            leading: Text("2"),
+            onTap: () {
+              print("prony is 2");
+            },
+            title: Text(
+              "sara",
+            ),
+            subtitle: Text("age:24"),
+            trailing: Text("2018"),
+          ),
+        ),
+        Card(
+          child: ListTile(
+            leading: Text("3"),
+            onTap: () {
+              print("print is 3");
+            },
+            title: Text(
+              "samy",
+            ),
+            subtitle: Text("age:34"),
+            trailing: Text("2012"),
+          ),
+        ),
+      ],
+    );
+  }
+
+  GridView GridCount() {
+    return GridView.count(
+      scrollDirection: Axis.horizontal,
+      crossAxisCount: 3,
+      mainAxisSpacing: 10.0,
+      crossAxisSpacing: 10,
+      childAspectRatio: 2,
+      children: [
+        Container(
+          child: Text("one"),
+          color: Colors.red,
+        ),
+        Container(
+          child: Text("two"),
+          color: Colors.blue,
+        ),
+        Container(
+          child: Text("three"),
+          color: Colors.yellow,
+        ),
+        Container(
+          child: Text("four"),
+          color: Colors.greenAccent,
+        ),
+        Container(
+          child: Text("five"),
+          color: Colors.black,
+        ),
+        Container(
+          child: Text("six"),
+          color: Colors.grey,
+        ),
+        Container(
+          child: Text("seven"),
+          color: Colors.orange,
+        ),
+        Container(
+          child: Text("eight"),
+          color: Colors.red,
+        ),
+        Container(
+          child: Text("nine"),
+          color: Colors.blue,
+        ),
+        Container(
+          child: Text("one"),
+          color: Colors.red,
+        ),
+        Container(
+          child: Text("two"),
+          color: Colors.blue,
+        ),
+        Container(
+          child: Text("three"),
+          color: Colors.yellow,
+        ),
+        Container(
+          child: Text("four"),
+          color: Colors.greenAccent,
+        ),
+        Container(
+          child: Text("five"),
+          color: Colors.black,
+        ),
+        Container(
+          child: Text("six"),
+          color: Colors.grey,
+        ),
+        Container(
+          child: Text("seven"),
+          color: Colors.orange,
+        ),
+        Container(
+          child: Text("eight"),
+          color: Colors.red,
+        ),
+        Container(
+          child: Text("nine"),
+          color: Colors.blue,
+        ),
+        Container(
+          child: Text("one"),
+          color: Colors.red,
+        ),
+        Container(
+          child: Text("two"),
+          color: Colors.blue,
+        ),
+        Container(
+          child: Text("three"),
+          color: Colors.yellow,
+        ),
+        Container(
+          child: Text("four"),
+          color: Colors.greenAccent,
+        ),
+        Container(
+          child: Text("five"),
+          color: Colors.black,
+        ),
+        Container(
+          child: Text("six"),
+          color: Colors.grey,
+        ),
+        Container(
+          child: Text("seven"),
+          color: Colors.orange,
+        ),
+        Container(
+          child: Text("eight"),
+          color: Colors.red,
+        ),
+        Container(
+          child: Text("nine"),
+          color: Colors.blue,
+        ),
+      ],
+    );
+  }
+
+  GridView GridViewBuilder() {
+    return GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, mainAxisSpacing: 5, childAspectRatio: 2),
+        itemCount: 100,
+        itemBuilder: (context, i) => Container(
+              color: i.isEven ? Colors.red : Colors.blue,
+              height: 100,
+              child: Text(
+                  style: TextStyle(fontSize: 40.5),
+                  textAlign: TextAlign.center,
+                  "$i"),
+            ));
   }
 }
 
